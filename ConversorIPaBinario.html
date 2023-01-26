@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de IP a binario</title>
+    <script>
+        function convertToBinary() {
+            var ip = document.getElementById("ip").value;
+            
+            var octetos = ip.split(".");
+            var binary = "";
+            for (var i = 0; i < octetos.length; i++) {
+                binary += parseInt(octetos[i], 10).toString(2) + ".";
+            }
+            document.getElementById("result").innerHTML = "La direccion IP en binario es: " + binary;
+        }
+    </script>
+
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #000080;
+}
+
+form {
+    margin: 20px auto;
+    width: 300px;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type="button"] {
+    width: 100%;
+    background-color: #000080;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #0000CD;
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>Conversor de IP a binario</h1>
+    <form>
+        <label for="ip">Ingrese la direccion IP:</label>
+        <input type="text" name="ip" id="ip">
+        <input type="button" value="Convertir" onclick="convertToBinary()">
+
+    </form>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
